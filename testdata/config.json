@@ -1,0 +1,21 @@
+{
+    "app" : {
+        "host" : "localhost",
+        "port" : 80,
+        "name" : "App-Name",
+        "version" : "v1.0.0"
+    },
+    "db" : {
+        "host" : "localhost",
+        "port" : 5432,
+        "user" : "",
+        "pass" : "",
+        "name" : "",
+        "enabled" : true
+    },
+    "cache" : {
+        "host" : "localhost",
+        "port" : 11211,
+        "enabled" : true
+    }
+}
