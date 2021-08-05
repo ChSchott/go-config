@@ -25,12 +25,12 @@ func BenchmarkLoadYAML(b *testing.B) {
 
 func TestIsJSON(t *testing.T) {
 
-	ok := IsJSON("testdata/config.json")
+	ok := isJSON("testdata/config.json")
 	if !ok {
 		t.Fail()
 	}
 
-	ok = IsJSON("testdata/config.jsn")
+	ok = isYAML("testdata/config.jsn")
 	if ok {
 		t.Fail()
 	}
@@ -44,7 +44,7 @@ type LoadTestScenario struct {
 
 func TestIsYAML(t *testing.T) {
 
-	ok := IsYAML("testdata/config.yml")
+	ok := isYAML("testdata/config.yml")
 	if !ok {
 		t.Fail()
 	}

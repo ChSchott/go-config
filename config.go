@@ -10,13 +10,13 @@ import (
 	"github.com/go-yaml/yaml"
 )
 
-// IsJSON determines if a given Config File Path is JSON
-func IsJSON(fileName string) bool {
+// isJSON determines if a given Config File Path is JSON
+func isJSON(fileName string) bool {
 	return strings.Contains(fileName, "json")
 }
 
 // IsYAML determines if a given Config File Path is YAML
-func IsYAML(fileName string) bool {
+func isYAML(fileName string) bool {
 	return strings.Contains(fileName, "yml") || strings.Contains(fileName, "yaml")
 }
 
@@ -37,14 +37,14 @@ func Load(configFilePath string) (*Config, error) {
 
 	var data *Config
 
-	if IsJSON(configFilePath) {
+	if isJSON(configFilePath) {
 		err = json.Unmarshal(bytes, &data)
 		if err != nil {
 			return nil, errors.New("Unable to Parse config file content. This may be due to a format error")
 		}
 	}
 
-	if IsYAML(configFilePath) {
+	if isYAML(configFilePath) {
 		err = yaml.Unmarshal(bytes, &data)
 		if err != nil {
 			return nil, errors.New("Unable to Parse config file content. This may be due to a format error")
