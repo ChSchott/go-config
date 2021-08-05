@@ -17,5 +17,17 @@
         "host" : "localhost",
         "port" : 11211,
         "enabled" : true
+    },
+    "messaging": {
+        "host" : "localhost",
+        "port" : 4442,
+        "enabled": true
+    },
+    "mail": {
+        "host": "localhost",  
+	    "port": 123,
+        "user": "admin",
+	    "pass": "toor",
+	    "enabled": true
     }
 }
